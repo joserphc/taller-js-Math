@@ -35,12 +35,12 @@ function calculateDiscount(event){
 
     let discount
 
-    let couponSelected = couponsArray.filter(function(couponSelect){
-        return couponSelect.name == coupon
+    const couponSelected = couponsArray.find(function(couponElement){
+        return couponElement.name == coupon
     })
     
-    if(couponSelected.name == coupon){
-        
+    if(couponSelected){
+        discount = couponSelected.discount
     }else{
         texResult.innerText = `This coupon is not validate`
         return
