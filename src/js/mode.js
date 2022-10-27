@@ -9,20 +9,22 @@ function calcularModa(arr){
         }
     }
 
-    let arrCountBi = Object.entries(arrCount)
+    let arrCountBi = Object.entries(arrCount) // Crea un array de arrays
 
-    sortArrayTwoDimensional(arrCountBi)
+    sortArrayTwoDimensional(arrCountBi, 1) // to order two-domensional 
+
+    const mode = arrCountBi[0][0]
 
     console.log(arrCount) // Array
-    console.log(arrCountBi) // Arra two-domensional
+    console.log(arrCountBi) // Arra two-domensional ordered
+    console.log(`'The mode is ${mode}'`)
 
     sortArrayTwoDimensional(arrCountBi)
 }
 
-function sortArrayTwoDimensional(arr){
+function sortArrayTwoDimensional(arr, i){
     const sorted = arr.sort(function(valorAcumulado, nuevoValor){
-        
-        return nuevoValor[1] - valorAcumulado[1]
+        return nuevoValor[i] - valorAcumulado[i]
     })
     return sorted
 }
