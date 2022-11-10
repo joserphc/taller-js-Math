@@ -16,8 +16,12 @@ function calcularModa(arr){
     const mode = arrCountBi[0][0]
 
     console.log(arrCount) // Array
+<<<<<<< HEAD
     console.log(arrCountBi) // Arra two-domensional ordered
     console.log(`'The mode is ${mode}'`)
+=======
+    console.log(arrCountBi) // Arra two-dimensional
+>>>>>>> de62c2e (metódos estáticos)
 
     sortArrayTwoDimensional(arrCountBi)
 }
