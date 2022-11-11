@@ -143,11 +143,13 @@ dist
 
 ### VisualStudioCode ###
 .vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+Visual Studio Code.lnk
 
 # Local History for Visual Studio Code
 .history/
