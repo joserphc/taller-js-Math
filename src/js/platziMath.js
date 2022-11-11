@@ -50,17 +50,21 @@ PlatziMath.calcularDescuento = function(event){
 }
 
 PlatziMath.esPar = function(arr){
-    arr.length % 2 === 0 ? console.log(`La lista es Par`) : console.log(`La lista es Impar`)
+    if(arr.length % 2 === 0){
+        return true
+    }else{
+        return false
+    }
 }
 
 PlatziMath.calcularMediana = function(arr){
-    arr = sortArray(arr)
+    arr = PlatziMath.ordenarArray(arr)
 
     let indexMedian = Math.floor(arr.length / 2)
     let indexMedian2 = 0
     let median = 0
 
-    if(esPar(arr)){
+    if(PlatziMath.esPar(arr)){
         indexMedian2 = indexMedian - 1
         const medianPar1 = arr[indexMedian]
         const medianPar2 = arr[indexMedian2]
@@ -82,7 +86,7 @@ PlatziMath.ordenarArray = function(arr){
     return sorted
 }
 
-PlatziMath.sortArrayDosDimensiones = function(arr){
+PlatziMath.ordenarArrayDosDimensiones = function(arr){
     const sorted = arr.sort(function(valorAcumulado, nuevoValor){
         
         return nuevoValor[1] - valorAcumulado[1]
