@@ -67,9 +67,9 @@ function medianaPorPersona(nombrePersona){
 
     const medianaSalarios = PlatziMath.calcularMediana(salarios)
 
-    console.log(salarios)
-    console.log(medianaSalarios)
     calcularAumento(salarios)
+
+    return medianaSalarios
 }
 
 const empresas = {}
@@ -187,7 +187,6 @@ function proyeccionPorempresa(nombre){
             const porcentajeCrecimiento = crecimiento / salarioAnterior
     
             listaPorcentajes.push(porcentajeCrecimiento)
-           
         }
     
         const medianaPorcentajesAumentos = PlatziMath.calcularMediana(listaPorcentajes)
@@ -200,4 +199,45 @@ function proyeccionPorempresa(nombre){
     }
 }
 
+
+// Análisis general
+
+function medianaGeneral(){
+    const listaMedianas = salarios.map(persona => medianaPorPersona(persona.name))
+
+    const mediana = PlatziMath.calcularMediana(listaMedianas)
+
+    return mediana
+}
+
+function medianaTop10(){
+    const listaMedianas = salarios.map(persona => medianaPorPersona(persona.name))
+
+    const medianasOrdenadas = PlatziMath.ordenarArray(listaMedianas)
+
+    const cantidad = listaMedianas.length / 10
+    const limite = listaMedianas.length - cantidad
+    // mi solución
+    /*
+    let count = cantidad
+    let top10 = []
+
+    for (let index = 0; index < cantidad; index++) {
+        top10.unshift(medianasOrdenadas[(medianasOrdenadas.length-count)])
+        count -= 1
+    }
+    console.log(medianasOrdenadas)
+    return {'Top 10%': top10}
+    */
+   // la solución del profesor
+   // slice
+   // splice
+   const top10 =medianasOrdenadas.slice(limite, medianasOrdenadas.length)
+
+   const medianaTop10 = PlatziMath.calcularMediana(top10)
+
+   console.log(top10)
+
+   return medianaTop10
+}
 
